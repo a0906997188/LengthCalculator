@@ -37,14 +37,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAllClear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textCM = new System.Windows.Forms.TextBox();
-            this.textM = new System.Windows.Forms.TextBox();
-            this.textKM = new System.Windows.Forms.TextBox();
+            this.txtCM = new System.Windows.Forms.TextBox();
+            this.txtM = new System.Windows.Forms.TextBox();
+            this.txtKM = new System.Windows.Forms.TextBox();
+            this.txtYard = new System.Windows.Forms.TextBox();
+            this.txtFt = new System.Windows.Forms.TextBox();
+            this.txtIn = new System.Windows.Forms.TextBox();
             this.textInfo = new System.Windows.Forms.TextBox();
-            this.textFt = new System.Windows.Forms.TextBox();
-            this.textIn = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,6 +118,7 @@
             this.btnAllClear.TabIndex = 6;
             this.btnAllClear.Text = "清除";
             this.btnAllClear.UseVisualStyleBackColor = true;
+            this.btnAllClear.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnAllClear_KeyUp);
             // 
             // label7
             // 
@@ -127,60 +130,71 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "說明文字";
             // 
-            // textCM
+            // txtCM
             // 
-            this.textCM.Location = new System.Drawing.Point(27, 160);
-            this.textCM.Name = "textCM";
-            this.textCM.Size = new System.Drawing.Size(100, 25);
-            this.textCM.TabIndex = 8;
+            this.txtCM.Location = new System.Drawing.Point(27, 160);
+            this.txtCM.Name = "txtCM";
+            this.txtCM.Size = new System.Drawing.Size(100, 25);
+            this.txtCM.TabIndex = 8;
+            this.txtCM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCM_KeyUp);
             // 
-            // textM
+            // txtM
             // 
-            this.textM.Location = new System.Drawing.Point(159, 160);
-            this.textM.Name = "textM";
-            this.textM.Size = new System.Drawing.Size(100, 25);
-            this.textM.TabIndex = 9;
+            this.txtM.Location = new System.Drawing.Point(159, 160);
+            this.txtM.Name = "txtM";
+            this.txtM.Size = new System.Drawing.Size(100, 25);
+            this.txtM.TabIndex = 9;
             // 
-            // textKM
+            // txtKM
             // 
-            this.textKM.Location = new System.Drawing.Point(294, 160);
-            this.textKM.Name = "textKM";
-            this.textKM.Size = new System.Drawing.Size(100, 25);
-            this.textKM.TabIndex = 10;
+            this.txtKM.Location = new System.Drawing.Point(294, 160);
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(100, 25);
+            this.txtKM.TabIndex = 10;
+            // 
+            // txtYard
+            // 
+            this.txtYard.Location = new System.Drawing.Point(294, 252);
+            this.txtYard.Name = "txtYard";
+            this.txtYard.Size = new System.Drawing.Size(100, 25);
+            this.txtYard.TabIndex = 13;
+            // 
+            // txtFt
+            // 
+            this.txtFt.Location = new System.Drawing.Point(159, 252);
+            this.txtFt.Name = "txtFt";
+            this.txtFt.Size = new System.Drawing.Size(100, 25);
+            this.txtFt.TabIndex = 12;
+            // 
+            // txtIn
+            // 
+            this.txtIn.Location = new System.Drawing.Point(27, 252);
+            this.txtIn.Name = "txtIn";
+            this.txtIn.Size = new System.Drawing.Size(100, 25);
+            this.txtIn.TabIndex = 11;
             // 
             // textInfo
             // 
-            this.textInfo.Location = new System.Drawing.Point(294, 252);
+            this.textInfo.Location = new System.Drawing.Point(27, 360);
             this.textInfo.Name = "textInfo";
-            this.textInfo.Size = new System.Drawing.Size(100, 25);
-            this.textInfo.TabIndex = 13;
-            // 
-            // textFt
-            // 
-            this.textFt.Location = new System.Drawing.Point(159, 252);
-            this.textFt.Name = "textFt";
-            this.textFt.Size = new System.Drawing.Size(100, 25);
-            this.textFt.TabIndex = 12;
-            // 
-            // textIn
-            // 
-            this.textIn.Location = new System.Drawing.Point(27, 252);
-            this.textIn.Name = "textIn";
-            this.textIn.Size = new System.Drawing.Size(100, 25);
-            this.textIn.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(27, 360);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(367, 25);
-            this.textBox7.TabIndex = 14;
+            this.textInfo.Size = new System.Drawing.Size(367, 25);
+            this.textInfo.TabIndex = 14;
             // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LengthCalculator.Properties.Resources.FacesetActor01_2;
+            this.pictureBox2.Location = new System.Drawing.Point(410, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(274, 338);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -189,13 +203,14 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(685, 439);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textInfo);
-            this.Controls.Add(this.textFt);
-            this.Controls.Add(this.textIn);
-            this.Controls.Add(this.textKM);
-            this.Controls.Add(this.textM);
-            this.Controls.Add(this.textCM);
+            this.Controls.Add(this.txtYard);
+            this.Controls.Add(this.txtFt);
+            this.Controls.Add(this.txtIn);
+            this.Controls.Add(this.txtKM);
+            this.Controls.Add(this.txtM);
+            this.Controls.Add(this.txtCM);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAllClear);
             this.Controls.Add(this.label4);
@@ -207,6 +222,7 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +238,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAllClear;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textCM;
-        private System.Windows.Forms.TextBox textM;
-        private System.Windows.Forms.TextBox textKM;
+        private System.Windows.Forms.TextBox txtCM;
+        private System.Windows.Forms.TextBox txtM;
+        private System.Windows.Forms.TextBox txtKM;
+        private System.Windows.Forms.TextBox txtYard;
+        private System.Windows.Forms.TextBox txtFt;
+        private System.Windows.Forms.TextBox txtIn;
         private System.Windows.Forms.TextBox textInfo;
-        private System.Windows.Forms.TextBox textFt;
-        private System.Windows.Forms.TextBox textIn;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
