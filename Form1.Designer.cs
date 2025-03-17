@@ -46,6 +46,7 @@
             this.textInfo = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label1.Location = new System.Drawing.Point(22, 119);
+            this.label1.Location = new System.Drawing.Point(21, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 25);
             this.label1.TabIndex = 0;
@@ -63,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label2.Location = new System.Drawing.Point(154, 119);
+            this.label2.Location = new System.Drawing.Point(155, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 1;
@@ -83,7 +84,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label4.Location = new System.Drawing.Point(289, 213);
+            this.label4.Location = new System.Drawing.Point(289, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 25);
             this.label4.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label5.Location = new System.Drawing.Point(154, 213);
+            this.label5.Location = new System.Drawing.Point(155, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 25);
             this.label5.TabIndex = 4;
@@ -103,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label6.Location = new System.Drawing.Point(22, 213);
+            this.label6.Location = new System.Drawing.Point(21, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 25);
             this.label6.TabIndex = 3;
@@ -113,18 +114,19 @@
             // 
             this.btnAllClear.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnAllClear.Location = new System.Drawing.Point(24, 34);
+            this.btnAllClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAllClear.Name = "btnAllClear";
-            this.btnAllClear.Size = new System.Drawing.Size(110, 51);
+            this.btnAllClear.Size = new System.Drawing.Size(109, 51);
             this.btnAllClear.TabIndex = 6;
             this.btnAllClear.Text = "清除";
             this.btnAllClear.UseVisualStyleBackColor = true;
-            this.btnAllClear.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnAllClear_KeyUp);
+            this.btnAllClear.Click += new System.EventHandler(this.btnAllClear_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("新細明體", 15F);
-            this.label7.Location = new System.Drawing.Point(22, 312);
+            this.label7.Location = new System.Drawing.Point(21, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 25);
             this.label7.TabIndex = 7;
@@ -133,6 +135,7 @@
             // txtCM
             // 
             this.txtCM.Location = new System.Drawing.Point(27, 160);
+            this.txtCM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCM.Name = "txtCM";
             this.txtCM.Size = new System.Drawing.Size(100, 25);
             this.txtCM.TabIndex = 8;
@@ -141,43 +144,55 @@
             // txtM
             // 
             this.txtM.Location = new System.Drawing.Point(159, 160);
+            this.txtM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(100, 25);
             this.txtM.TabIndex = 9;
+            this.txtM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtM_KeyUp);
             // 
             // txtKM
             // 
-            this.txtKM.Location = new System.Drawing.Point(294, 160);
+            this.txtKM.Location = new System.Drawing.Point(293, 160);
+            this.txtKM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKM.Name = "txtKM";
             this.txtKM.Size = new System.Drawing.Size(100, 25);
             this.txtKM.TabIndex = 10;
+            this.txtKM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKM_KeyUp);
             // 
             // txtYard
             // 
-            this.txtYard.Location = new System.Drawing.Point(294, 252);
+            this.txtYard.Location = new System.Drawing.Point(293, 252);
+            this.txtYard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtYard.Name = "txtYard";
             this.txtYard.Size = new System.Drawing.Size(100, 25);
             this.txtYard.TabIndex = 13;
+            this.txtYard.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtYard_KeyUp);
             // 
             // txtFt
             // 
             this.txtFt.Location = new System.Drawing.Point(159, 252);
+            this.txtFt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFt.Name = "txtFt";
             this.txtFt.Size = new System.Drawing.Size(100, 25);
             this.txtFt.TabIndex = 12;
+            this.txtFt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFt_KeyUp);
             // 
             // txtIn
             // 
             this.txtIn.Location = new System.Drawing.Point(27, 252);
+            this.txtIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIn.Name = "txtIn";
             this.txtIn.Size = new System.Drawing.Size(100, 25);
             this.txtIn.TabIndex = 11;
+            this.txtIn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIn_KeyUp);
             // 
             // textInfo
             // 
+            this.textInfo.Font = new System.Drawing.Font("新細明體", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textInfo.Location = new System.Drawing.Point(27, 360);
+            this.textInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textInfo.Name = "textInfo";
-            this.textInfo.Size = new System.Drawing.Size(367, 25);
+            this.textInfo.Size = new System.Drawing.Size(367, 35);
             this.textInfo.TabIndex = 14;
             // 
             // imageList1
@@ -189,12 +204,26 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LengthCalculator.Properties.Resources.FacesetActor01_2;
-            this.pictureBox2.Location = new System.Drawing.Point(410, 47);
+            this.pictureBox2.Location = new System.Drawing.Point(411, 48);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(274, 338);
+            this.pictureBox2.Size = new System.Drawing.Size(275, 338);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Font = new System.Drawing.Font("Cambria", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(452, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(130, 55);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Luna";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Form1
             // 
@@ -203,6 +232,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(685, 439);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textInfo);
             this.Controls.Add(this.txtYard);
@@ -220,6 +250,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -247,6 +278,7 @@
         private System.Windows.Forms.TextBox textInfo;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label8;
     }
 }
 
