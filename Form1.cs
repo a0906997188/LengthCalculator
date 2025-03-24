@@ -4,14 +4,50 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LengthCalculator
 {
+    enum LengthUnit // 定義單位的枚舉
+    {
+        CM = 0,
+        M,
+        KM,
+        Inch,
+        Ft,
+        Yard
+    }
+    
+
     public partial class Form1: Form
     {
+
+        /// <summary>
+        /// 自動轉換為單位，_kind為單位，_value為公分數值
+        /// </summary>
+        /// <param name="_kind"></param>
+        /// <param name="_value"></param>
+        private void caculateAnswer(LengthUnit _kind,double _value)
+        {
+            byte _j = (byte)_kind; //用括號強轉
+            if (_j != 0)
+                txtCM.Text = string.Format("{0:0.##########}", _value);
+            if (_j != 1)
+                txtM.Text = string.Format("{0:0.##########}", _value / 100);
+            if (_j != 2)
+                txtKM.Text = string.Format("{0:0.##########}", _value / 100000);
+            if (_j != 3)
+                txtIn.Text = string.Format("{0:0.##########}", _value / 2.54);
+            if (_j != 4)
+                txtFt.Text = string.Format("{0:0.##########}", _value / 30.48);
+            if (_j != 5)
+                txtYard.Text = string.Format("{0:0.##########}", _value / 91.44);
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -23,11 +59,7 @@ namespace LengthCalculator
             if(double.TryParse(txtCM.Text, out douCM)) 
             {
                 textInfo.Text = "";
-                txtM.Text = string.Format("{0:0.##########}", douCM / 100);
-                txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
-                txtIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
-                txtFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
-                txtYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
+                caculateAnswer(LengthUnit.CM , douCM);
             }
             else
             {
@@ -44,12 +76,9 @@ namespace LengthCalculator
             double douM;
             if(double.TryParse(txtM.Text, out douM)) 
             {
+
                 textInfo.Text = "";
-                txtCM.Text = string.Format( "{0:0.##########}", douM * 100);
-                txtKM.Text = string.Format("{0:0.##########}", douM / 1000);
-                txtIn.Text = string.Format("{0:0.##########}", douM * 39.3700787);
-                txtFt.Text = string.Format("{0:0.##########}", douM * 3.2808399);
-                txtYard.Text = string.Format("{0:0.##########}", douM * 1.0936133); 
+                caculateAnswer(LengthUnit.M, douM * 100);
             }
             else
             {
@@ -65,11 +94,7 @@ namespace LengthCalculator
             if (double.TryParse(txtKM.Text, out douKM))
             {
                 textInfo.Text = "";
-                txtCM.Text = string.Format("{0:0.##########}", douKM * 100000);
-                txtM.Text = string.Format("{0:0.##########}", douKM * 1000);
-                txtIn.Text = string.Format("{0:0.##########}", douKM * 39370.0787);
-                txtFt.Text = string.Format("{0:0.##########}", douKM * 3280.8399);
-                txtYard.Text = string.Format("{0:0.##########}", douKM * 1093.6133);
+                caculateAnswer(LengthUnit.KM, douKM * 100000);
             }
             else 
             {
@@ -92,11 +117,7 @@ namespace LengthCalculator
             if(double.TryParse(txtIn.Text, out douIn))
             {
                 textInfo.Text = "";
-                txtCM.Text = string.Format("{0:0.##########}", douIn * 2.54);
-                txtM.Text = string.Format("{0:0.##########}", douIn * 0.0254);
-                txtKM.Text = string.Format("{0:0.##########}", douIn * 0.0000254);
-                txtFt.Text = string.Format("{0:0.##########}", douIn / 12);
-                txtYard.Text = string.Format("{0:0.##########}", douIn / 36);
+                caculateAnswer(LengthUnit.Inch, douIn * 2.54);
             }
             else
             {
@@ -112,11 +133,7 @@ namespace LengthCalculator
             if(double.TryParse(txtFt.Text, out douFt))
             {
                 textInfo.Text = "";
-                txtCM.Text = string.Format("{0:0.##########}", douFt * 30.48);
-                txtM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
-                txtKM.Text = string.Format("{0:0.##########}", douFt * 0.0003048);
-                txtIn.Text = string.Format("{0:0.##########}", douFt * 12);
-                txtYard.Text = string.Format("{0:0.##########}", douFt / 3);
+                caculateAnswer(LengthUnit.Ft, douFt * 30.48);
             }
             else
             {
@@ -133,11 +150,7 @@ namespace LengthCalculator
             if(double.TryParse(txtYard.Text, out douYard))
             {
                 textInfo.Text = "";
-                txtCM.Text = string.Format("{0:0.##########}", douYard * 91.44);
-                txtM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
-                txtKM.Text = string.Format("{0:0.##########}", douYard * 0.0009144);
-                txtIn.Text = string.Format("{0:0.##########}", douYard * 36);
-                txtFt.Text = string.Format("{0:0.##########}", douYard * 3);
+                caculateAnswer(LengthUnit.Yard, douYard * 91.44);
             }
             else
             {
